@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add new Hu type</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <form class="add-buyin-form" (ngSubmit)="addGamaType(form.valid)" #form="ngForm">
+      <ion-item>
+        <ion-label>Buy-in</ion-label>
+        <ion-input type="number" [(ngModel)]="gameType.buyIn" name="buyIn" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Tax</ion-label>
+        <ion-input type="number" [(ngModel)]="gameType.tax" name="tax" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Currency</ion-label>
+        <ion-select [(ngModel)]="gameType.currency" name="tax">
+          <ion-option value="USD">USD</ion-option>
+          <ion-option value="EUR">EUR</ion-option>
+          <ion-option value="GBP">GBP</ion-option>
+        </ion-select>
+      </ion-item>
+      <button ion-button type="submit" block [disabled]="form.invalid">Add Hu Type</button>
+    </form>
+
+</ion-content>

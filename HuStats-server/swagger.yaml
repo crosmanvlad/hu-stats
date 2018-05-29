@@ -1,0 +1,14 @@
+swagger: '2.0'
+info:
+  title: Title
+  description: |
+   description
+  version: "1.0.0"
+host: localhost:3000
+basePath: /path
+tags:
+  - name: TagName
+    description: Tag description
+schemes:
+  - http
+paths:

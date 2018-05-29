@@ -1,0 +1,83 @@
+.result {
+  padding-left: 7px;
+  padding-bottom: 5px; 
+  font-size: 1.8rem;
+
+  &.win {
+    color: green;
+  }
+
+  &.lose {
+    color: red;
+  }  
+}
+
+span {
+    &.win {
+        color: green;
+    }
+
+    &.lose {
+        color: red;
+    }  
+}
+
+ion-list {
+    div {
+        padding-bottom: 10px;
+    }
+
+    ion-title {
+        .toolbar-title-md {
+            font-size: 1.5rem !important;
+            padding-bottom: 4px;
+        }
+    }
+}
+.days-content {
+     .scroll-content {
+       
+    }
+}
+
+.buttom-buttons {
+    position: fixed;
+    width: calc(100vw - 32px);
+    bottom: 0;
+    z-index: 10;
+    background-color: white;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding-bottom: 7px;
+
+    button {
+        width: 100%;
+        padding: 0px 5px 0px 5px;
+
+        &.win {
+            background-color: green;
+        }
+
+        &.lose {
+            background-color: red;
+        }  
+    }
+}
+
+ion-label {
+    white-space: inherit;
+}
+
+.content {
+    text-align: center;
+}
+
+.day {
+    &.item-md {
+        padding-left: 0px !important;
+    }
+}
+
+

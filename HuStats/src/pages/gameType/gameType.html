@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{gameType?.buyIn | currency:gameType?.currency:true}} ( {{gameType?.buyIn - gameType?.tax | currency:gameType?.currency:true}} + {{gameType?.tax | currency:gameType?.currency:true}}) Hu<br>
+    <small>min target {{gameType?.minTarget | percent: '1.0-2'}}</small></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="content days-content" padding>
+    <button class="load-more" ion-button (click)="loadMore()"><ion-icon name="refresh"></ion-icon></button>
+    <ion-list>
+        <div class="day" ion-item *ngFor="let day of games?.days | reverse">
+            <ion-title>{{day._id | date: 'mediumDate'}} --> <span [ngClass]="day.win/day.count >= gameType.minTarget ? 'win' : 'lose' ">{{ (2 * day.win * (gameType.buyIn - gameType.tax)) - ( day.count * gameType.buyIn) | currency: gameType.currency:true}} ({{day.win/day.count | percent: '1.0-2'}})</span></ion-title>
+            <ion-icon class="result" *ngFor="let game of day?.games" [name]="game?.result ? 'checkmark' : 'arrow-round-down'"  [ngClass]="game?.result ? 'win' : 'lose'"></ion-icon>
+        </div>
+    </ion-list>
+    <div class="buttom-buttons"> 
+        <button ion-button secondary class="lose" (click)="addGame(0)">LOSE</button>
+        <button ion-button secondary class="win" (click)="addGame(1)">WIN</button>
+    </div>
+
+</ion-content>
